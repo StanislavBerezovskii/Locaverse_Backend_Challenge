@@ -7,8 +7,8 @@ SQLite3 database support, and accepts one phone number at a time as JSON.
 The phone number can be written as a string in many various formats.
 The project uses PhoneNumbers library to validate and format the numbers to 
 start with +43 and only contain numbers, leaving no spaces, dashes, letters
-or any special characters. After normalization, return the new phone number
-is returned as JSON from the route.
+or any special characters. After normalization, the new phone number is returned
+as JSON from the route.
 
 
 ### Launchung the Project:
