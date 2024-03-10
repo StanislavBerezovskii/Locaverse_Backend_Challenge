@@ -4,6 +4,7 @@ errors = Blueprint("errors", __name__)
 
 
 class InvalidAPIUsage(Exception):
+    """A custom Exception template for the project"""
     status_code = 400
 
     def __init__(self, message, status_code=None):
@@ -18,4 +19,5 @@ class InvalidAPIUsage(Exception):
 
 @errors.app_errorhandler(InvalidAPIUsage)
 def invalid_api_usage(error):
+    """A custom json Error for the project"""
     return jsonify(error.to_dict()), error.status_code

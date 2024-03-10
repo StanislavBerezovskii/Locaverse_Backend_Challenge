@@ -12,6 +12,7 @@ main = Blueprint("main", __name__)
 
 @main.route('/api/numbers/<int:id>/', methods=['GET'])
 def get_number(id):
+    """API endpoint for Retrieve-one CRUD operation"""
     number = PhoneNumber.query.get(id)
     if number is None:
         raise InvalidAPIUsage(
@@ -22,6 +23,7 @@ def get_number(id):
 
 @main.route('/api/numbers/<int:id>/', methods=['PATCH'])
 def update_number(id):
+    """API endpoint for Update CRUD operation"""
     data = request.get_json()
     if 'phone' not in data or data['phone'] == '':
         raise InvalidAPIUsage('Please enter the phone number')
@@ -43,6 +45,7 @@ def update_number(id):
 
 @main.route('/api/numbers/<int:id>/', methods=['DELETE'])
 def delete_number(id):
+    """API endpoint for Delete CRUD operation"""
     number = PhoneNumber.query.get_or_404(id)
     db.session.delete(number)
     db.session.commit()
@@ -51,6 +54,7 @@ def delete_number(id):
 
 @main.route('/api/numbers/', methods=['GET'])
 def get_numbers():
+    """API endpoint for Retrieve-all CRUD operation"""
     numbers = PhoneNumber.query.all()
     numbers_list = [number.to_dict() for number in numbers]
     if not bool(numbers_list):
@@ -61,6 +65,7 @@ def get_numbers():
 
 @main.route('/api/numbers/', methods=['POST'])
 def add_number():
+    """API endpoint for Create CRUD operation"""
     data = request.get_json()
     if 'phone' not in data or data['phone'] == '':
         raise InvalidAPIUsage('Please enter the phone number')

@@ -1,16 +1,29 @@
-### Как запустить проект:
+### Description:
 
-Клонировать репозиторий и перейти в него в командной строке:
+Locaverse_Backend_Challenge is project created for the Backend Internship
+application task for Locaverse Vienna. It is a backend API designed
+to normalize Austrian phone numbers. The project includes full API CRUD and
+SQLite3 database support, and accepts one phone number at a time as JSON.
+The phone number can be written as a string in many various formats.
+The project uses PhoneNumbers library to validate and format the numbers to 
+start with +43 and only contain numbers, leaving so no spaces, dashes, letters
+or any special characters. After normalization, return the new phone number
+is returned as JSON from the route.
+
+
+### Launchung the Project:
+
+Clone the repository and navigate to it's root directory in the command line:
 
 ```
 git clone 
 ```
 
 ```
-cd what_to_watch
+cd coding_challenge
 ```
 
-Cоздать и активировать виртуальное окружение:
+Create and activate the virtual environment:
 
 ```
 python3 -m venv venv
@@ -19,13 +32,14 @@ python3 -m venv venv
 ```
 source venv/bin/activate
 ```
-или для пользователей Windows
+
+Or, for Windows users:
 
 ```
-source env/Scripts/activate
+source venv/Scripts/activate
 ```
 
-Установить зависимости из файла requirements.txt:
+Install project dependencies from the requirements.txt file:
 
 ```
 python3 -m pip install --upgrade pip
@@ -35,7 +49,13 @@ python3 -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-Запустить проект:
+Run pytest to check for project integrity:
+
+```
+pytest
+```
+
+Launch the project:
 
 ```
 flask run

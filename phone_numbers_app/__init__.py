@@ -8,6 +8,7 @@ from .models import PhoneNumber
 
 
 def create_app(database_uri=os.getenv('DATABASE_URI')):
+    """Generates a Flask application and database"""
     app = Flask(__name__)
     app.config["SQLALCHEMY_DATABASE_URI"] = database_uri
     app.config["SECRET_KEY"] = os.getenv('SECRET_KEY', default='qwerty12345')
