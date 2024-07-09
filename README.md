@@ -1,6 +1,6 @@
 ### Description:
 
-Locaverse_Backend_Challenge is project created for the Backend Internship
+Locaverse_Backend_Challenge is a project created for the Backend Internship
 application task for Locaverse Vienna. It is a Flask API designed
 to normalize Austrian phone numbers. The project includes full API CRUD and
 SQLite3 database support, and accepts one phone number at a time as JSON.
